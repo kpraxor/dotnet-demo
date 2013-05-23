@@ -1,0 +1,74 @@
+﻿@{ var hostname = @System.Environment.MachineName;
+   var hostHeader = @Request.Url.Host;
+}
+<style type="text/css">
+    h1,h2 {
+        text-align: center;
+    }
+    table {
+       
+        border: 1px solid black;
+        border-collapse:collapse;
+        padding:3px 7px 2px 7px;
+        text-align:center;
+    }
+    th {
+        font-weight: bold;
+    }
+
+</style>
+
+<h1>Browsing: @hostname</h1>
+<h2>Host Header: @hostHeader</h2>
+<div id="main" align="center">
+<table border="1">
+
+    <tr>
+        <td>URL Requested</td><td>@Request.Url</td>
+    </tr>
+    <tr>
+    <td>Relative Path</td> <td>@Request.FilePath</td> </tr>
+    <tr>
+    <td>Full Path</td><td>@Request.MapPath(Request.FilePath)</td>
+        </tr>
+    <tr>
+    <td>HTTP Request Type</td><td>@Request.RequestType</td></tr>
+   <tr>
+           <td>Request.Browser.Type</td>
+           <td>@Request.Browser.Type</td>
+       </tr>
+    <tr>
+        <td>Request.Browser.Browser (Name)</td>
+        <td>@Request.Browser.Browser</td>
+    </tr>
+
+    <tr>
+        <td>Request.Browser.Version</td>
+        <td>@Request.Browser.Version</td>
+    </tr>
+    <tr>
+        <td>System.Environment.MachineName</td>
+        <td>@System.Environment.MachineName</td>
+    </tr>
+    <tr>
+        <td>Request.UserHostAddress</td>
+        <td>@Request.UserHostAddress</td>
+    </tr>
+    <tr>
+        <td>Request.UserAgent</td>
+        <td>@Request.UserAgent</td>
+    </tr>
+    <tr>
+        <td>Request.Url</td>
+        <td>@Request.Url</td>
+    </tr>
+
+</table>
+    <p>@Request.Url.AbsoluteUri<br />
+        @Request.Url.Authority <br />
+        @Request.Url.DnsSafeHost<br />
+        @Request.Url.Host<br />
+        @Request.Url.HostNameType<br />
+    </p>
+    </div>
+
